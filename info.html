@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Sensor Information</h1>
+
+    <nav>
+        <a href="/car_control">Car Control</a> | 
+        <a href="/sensor_info">Sensor Information</a>
+    </nav>
+    
+    <div class="card">
+        <p>Latest Temperature: {{ temp.value + '°C' if temp else 'N/A' }}</p>
+        <p>Average Temperature Last Hour: {{ (avg_temp_last_hour|round(2)|string) + '°C' if avg_temp_last_hour else 'N/A' }}</p>
+        <p>Min Temperature Today: {{ min_temp_today + '°C' if min_temp_today else 'N/A' }}</p>
+        <p>Max Temperature Today: {{ max_temp_today + '°C' if max_temp_today else 'N/A' }}</p>
+    </div>
+    <div class="card">
+        <p>Latest Humidity: {{ hum.value + '%' if hum else 'N/A' }}</p>
+        <p>Average Humidity Last Hour: {{ (avg_hum_last_hour|round(2)|string) + '%' if avg_hum_last_hour else 'N/A' }}</p>
+        <p>Min Humidity Today: {{ min_hum_today + '%' if min_hum_today else 'N/A' }}</p>
+        <p>Max Humidity Today: {{ max_hum_today + '%' if max_hum_today else 'N/A' }}</p>
+    </div>
+    <div class="card">
+        <p>Last Movement Detected Time: {{ move_time }}</p>
+    </div>
+</body>
+</html>

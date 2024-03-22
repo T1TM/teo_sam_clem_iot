@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Controller</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Camera Car Controller</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/sensor_info">Sensor Information</a>
+    </nav>
+
+    <div class="controller">
+        <form action="" method="post" class="control-buttons">
+            <div></div>
+            <button name="button_forward" type="submit">↑</button>
+            <div></div>
+            <button name="button_left" type="submit">←</button>
+            <button name="button_stop" type="submit">■</button>
+            <button name="button_right" type="submit">→</button>
+            <div></div>
+            <button name="button_backward" type="submit">↓</button>
+            <div></div>
+        </form>
+    </div>
+    {% if message %}
+        <p class="message">{{ message }}</p>
+    {% endif %}
+</body>
+</html>

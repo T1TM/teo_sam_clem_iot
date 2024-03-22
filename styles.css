@@ -1,0 +1,102 @@
+/* Basic Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Header */
+header {
+    background-color: #222222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    background: #444;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    padding: 0 15px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+h1 {
+    color: #333;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.card p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Button and Control Styling */
+.controller, .control-buttons, form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controller button, form button {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.control-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: fit-content;
+    margin: auto;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive Design for smartphones */
+@media (max-width: 600px) {
+    body, html {
+        font-size: 40px; /* Larger base font size for readability on small screens */
+    }
+
+    header, nav a, .message, .controller button, form button {
+        font-size: 1.2em; /* Increase font size for key elements */
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .controller, .control-buttons, form {
+        flex-direction: column;
+    }
+}
